@@ -4,6 +4,9 @@ import model.interfaces.OnlinePaymentInterface;
 
 public class PaypalService implements OnlinePaymentInterface {
 
+    public PaypalService() {
+    }
+
     // retorna o valor da taxa de pagamento
     @Override
     public Double paymentFee(Double amount) {
@@ -13,6 +16,8 @@ public class PaypalService implements OnlinePaymentInterface {
     // retorna o valor dos juros
     @Override
     public Double interest(Double amount, Integer months) {
-        return amount + (0.1 * months * amount);
+        double result = amount + (0.01 * months * amount);
+
+        return result - amount;
     }
 }
