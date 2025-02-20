@@ -2,6 +2,7 @@ package model.services;
 
 import model.entities.Contract;
 import model.entities.Installment;
+import model.exceptions.MissingContractException;
 import model.interfaces.OnlinePaymentInterface;
 
 public class ContractService {
@@ -13,7 +14,10 @@ public class ContractService {
         this.paymentService = paymentService;
     }
 
-    public void processContract(Contract contract, Integer months) {
+    public void processContract(Contract contract, Integer months) throws MissingContractException {
+
+        if (contract == null)
+            throw new MissingContractException("Error: Missing contract");
 
         // meses que serão adicionados a parcela.
         // começa com 0 e vou incrementando a cada parcela dentro do loop, já que os
