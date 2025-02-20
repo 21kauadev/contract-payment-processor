@@ -14,5 +14,3 @@ Esse projeto consiste em um exercício / desafio de processamento de pagamentos 
 Exercício do curso Java COMPLETO Programação Orientada a Objetos + projetos
 
 https://www.udemy.com/course/java-curso-completo/
-
-![alt text](image.png)
